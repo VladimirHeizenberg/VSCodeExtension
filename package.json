@@ -1,9 +1,9 @@
 {
-    "name": "cpp-copy-constructor-generator",
-    "displayName": "C++ Copy Constructor Generator",
-    "description": "Adds copy constructor and assignment operator to C++ classes.",
+    "name": "cpp-rule-of-three",
+    "displayName": "C++ Rule of three guarantee",
+    "description": "Adds copy constructor and assignment operator to C++ classes if there is at least one constructor",
     "version": "0.0.1",
-    "publisher": "yourpublishername",
+    "publisher": "Vladimir Kalganov",
     "engines": {
       "vscode": "^1.79.0"
     },
@@ -11,20 +11,19 @@
       "Refactoring"
     ],
     "activationEvents": [
-      "onCommand:cpp-copy-constructor-generator.generateCopyMethods"
     ],
     "main": "./out/extension.js",
     "contributes": {
       "commands": [
         {
-          "command": "cpp-copy-constructor-generator.generateCopyMethods",
-          "title": "C++ Copy Constructor Generator: Generate Copy Methods"
+          "command": "cpp-rule-of-three",
+          "title": "C++ Rule of three generator: Add copy constructor and assignment operator"
         }
       ],
       "menus": {
         "editor/context": [
           {
-            "command": "cpp-copy-constructor-generator.generateCopyMethods",
+            "command": "cpp-rule-of-three",
             "group": "navigation",
             "when": "editorLangId == cpp"
           }

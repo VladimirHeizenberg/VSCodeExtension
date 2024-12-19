@@ -50,7 +50,7 @@ function insertCode(code: string, publicIndex: number, newCode: string): string 
 
 
 export function activate(context: vscode.ExtensionContext) {
-    let disposable = vscode.commands.registerCommand('cpp-copy-constructor-generator.generateCopyMethods', () => {
+    let disposable = vscode.commands.registerCommand('cpp-rule-of-three', () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
             return;
@@ -104,7 +104,7 @@ export function activate(context: vscode.ExtensionContext) {
 				vscode.window.showInformationMessage("Copy constructor and/or assignment operator generated.");
           	});
 		} else {
-            vscode.window.showInformationMessage('Copy constructor and assignment operator are already present.');
+            vscode.window.showInformationMessage('Copy constructor and assignment operator are already implemented.');
         }
     });
     context.subscriptions.push(disposable);
